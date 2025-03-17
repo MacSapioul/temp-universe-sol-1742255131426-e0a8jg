@@ -1,0 +1,218 @@
+.landing-page {
+    position: relative;
+    width: 100vw;
+    min-height: 200vh; /* Altezza minima per includere entrambe le sezioni */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Mantiene h1 e p in alto */
+    align-items: center;
+    background: linear-gradient(to bottom, #3A2F2F, #5C4033); /* Gradiente marrone scuro */
+}
+
+.video-container {
+    position: relative; /* Cambiato da absolute per consentire il posizionamento dei buttons */
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.video-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Overlay originale */
+    z-index: 5;
+    pointer-events: none; /* Evita che l'overlay blocchi i clic */
+}
+
+.background-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.overlay-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.5); /* Overlay originale */
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    z-index: 99; /* Aumentiamo il z-index per garantire interattività */
+    position: absolute; /* Posizioniamo i pulsanti in fondo al video-container */
+    bottom: 20px; /* Distanza dal fondo */
+    left: 50%; /* Centriamo orizzontalmente */
+    transform: translateX(-50%); /* Correggiamo il centramento */
+    width: auto; /* Assicura che i pulsanti si adattino al contenuto */
+}
+
+.content {
+    position: absolute;
+    top: 10%; /* Centriamo verticalmente */
+    left: 50%; /* Centriamo orizzontalmente */
+    transform: translate(-50%, -50%); /* Correggiamo il centramento */
+    z-index: 150;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    /* Rimuoviamo l'overlay semi-trasparente */
+}
+
+.music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 5;
+}
+
+.music-control {
+    background: rgba(198, 140, 83, 0.3); /* Arancione terroso */
+    border: none;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    font-size: 1.2em;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(245, 222, 179, 0.7); /* Ombra arancione chiaro */
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.music-control:hover {
+    background: rgba(245, 222, 179, 0.5); /* Hover arancione chiaro */
+    transform: scale(1.1);
+}
+
+h1 {
+    font-size: 4em;
+    margin: 20px 0 0 0;
+    font-family: 'Exo 2', sans-serif;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 0.7); /* Ombra scura più pronunciata */
+    color: #FFFFFF; /* Bianco puro per massimo contrasto */
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.1em;
+    margin: 20px 0 20px 0;
+    max-width: 700px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9); /* Bianco con leggera opacità */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); /* Ombra scura */
+}
+
+.futuristic-button {
+    background: #C68C53 !important; /* Forza il colore di sfondo */
+    border: none !important;
+    color: #FFFFFF !important;
+    padding: 10px 20px !important;
+    font-size: 1.1em !important;
+    border-radius: 50px !important; /* Forza i bordi arrotondati */
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    font-family: 'Montserrat', sans-serif !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    outline: none !important; /* Rimuove eventuali bordi di focus indesiderati */
+}
+
+.futuristic-button:hover {
+    background: #F5DEB3 !important; /* Forza il colore hover */
+    transform: scale(1.05) !important;
+}
+
+.futuristic-button:disabled {
+    background: rgba(74, 64, 51, 0.3) !important; /* Forza il colore disabilitato */
+    cursor: not-allowed !important;
+    color: #808080 !important;
+}
+
+.wallet-button {
+    position: fixed;
+    top: 20px;
+    right: 70px;
+    z-index: 99;
+    width: auto;
+    height: auto;
+}
+
+.wallet-button button {
+    background: #C68C53 !important; /* Forza il colore di sfondo */
+    border: none !important;
+    color: #FFFFFF !important;
+    padding: 8px 16px !important;
+    font-size: 1em !important;
+    border-radius: 50px !important; /* Forza i bordi arrotondati */
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    font-family: 'Montserrat', sans-serif !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    outline: none !important; /* Rimuove eventuali bordi di focus indesiderati */
+}
+
+.wallet-button button:hover {
+    background: #F5DEB3 !important; /* Forza il colore hover */
+    transform: scale(1.05) !important;
+}
+
+.logo-container {
+    position: fixed;
+    top: -10px;
+    left: 10px;
+    z-index: 5;
+    width: auto;
+    height: auto;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px #8B5A2B);
+}
+
+.roadmap-toggle {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .futuristic-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  
+  .futuristic-button:hover {
+    background-color: #45a049;
+  }
