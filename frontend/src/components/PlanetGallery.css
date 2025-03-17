@@ -1,0 +1,116 @@
+.planet-gallery {
+    background: transparent; /* Rimuoviamo lo sfondo per mostrare lo skybox */
+    padding: 0; /* Rimuoviamo tutti i padding per eliminare i banner */
+    width: 100vw; /* Occupa l'intera larghezza dello schermo */
+    height: 100vh; /* Altezza per coprire l'intera sezione */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box; /* Include padding nella larghezza */
+    overflow-x: hidden; /* Evita overflow orizzontale */
+}
+
+.section-title {
+    font-size: 2.5em;
+    margin-bottom: 0; /* Rimuoviamo margine per evitare spazi non necessari */
+    font-family: 'Exo 2', sans-serif;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    color: #ffffff; /* Arancione chiaro */
+    z-index: 2; /* Sopra lo skybox */
+    position: absolute; /* Posizioniamo il titolo in alto */
+    top: 20px; /* Distanza dal bordo superiore */
+    left: 50%;
+    transform: translateX(-50%); /* Centriamo orizzontalmente */
+}
+
+.carousel-container {
+    width: 100vw; /* Occupa l'intera larghezza dello schermo */
+    height: 100%; /* Occupa l'intera altezza della sezione */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* Include padding nella larghezza */
+    position: relative;
+    overflow: hidden; /* Evita overflow */
+}
+
+.carousel-3d {
+    width: 100vw; /* Occupa l'intera larghezza dello schermo */
+    height: 100%; /* Occupa l'intera altezza della sezione */
+    margin: 0; /* Rimuoviamo margine per evitare spazi non necessari */
+    overflow: hidden; /* Controlla l'overflow del canvas */
+    position: relative; /* Per il posizionamento assoluto del canvas */
+}
+
+.carousel-3d canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw !important; /* Forza la larghezza totale */
+    height: 100% !important; /* Forza l'altezza totale della sezione */
+    object-fit: cover; /* Adatta l'immagine al contenitore */
+}
+
+.carousel-description {
+    text-align: center;
+    z-index: 2; /* Sopra lo skybox */
+    color: #FFFFFF; /* Assicuriamo che il testo sia visibile */
+    position: absolute;
+    bottom: 20px; /* Posizioniamo la descrizione in basso */
+    width: 100%;
+    text-align: center;
+}
+
+.planet-name {
+    font-size: 1.5em;
+    margin: 5px 0;
+    font-family: 'Exo 2', sans-serif;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #F5DEB3; /* Ombra arancione chiaro */
+}
+
+.planet-rewards {
+    font-size: 1.1em;
+    margin: 5px 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #C68C53; /* Arancione terroso */
+}
+
+.planet-compounds {
+    font-size: 1em;
+    margin: 5px 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #D2B48C; /* Beige chiaro */
+}
+
+.carousel-controls {
+    display: flex;
+    gap: 20px;
+    z-index: 2; /* Sopra lo skybox */
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.carousel-button {
+    background: #C68C53; /* Arancione terroso */
+    border: none;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 50px; /* Bordi arrotondati */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-button:hover {
+    background: #F5DEB3; /* Arancione chiaro */
+    transform: scale(1.05);
+}
