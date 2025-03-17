@@ -1,0 +1,27 @@
+[package]
+name = "universe-solana-backend"
+version = "0.1.0"
+description = "Universe Solana Backend Smart Contract"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "universe_solana_backend"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = "0.31.0"  # <-- Aggiornato
+anchor-spl = "0.31.0"    # <-- Aggiornato
+spl-token = "4.0.0"
+mpl-token-metadata = "5.1.0"
+webpki = "=0.22.0"
+rustls = "=0.20.8"
+
+[dev-dependencies]
+anchor-client = "0.31.0"  # <-- Aggiornato
